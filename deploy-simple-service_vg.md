@@ -44,7 +44,12 @@ spec:
         - containerPort: 80
 EOF
 ```
+3. check results
+```
+kubectl get deployments
 
+kubectl get pods
+```
 
 ### Create a store-products service and verify that you can access it from the busybox testing pod
 
@@ -66,8 +71,9 @@ spec:
 EOF
 ```
 2. Make sure the service is up in the cluster:
-
 ```
+kubectl get svc
+
 kubectl get svc store-products
 ```
     The output will look something like this:
@@ -75,8 +81,14 @@ kubectl get svc store-products
 ```
 NAME             TYPE        CLUSTER-IP      EXTERNAL-IP   PORT(S)   AGE
 store-products   ClusterIP   10.104.11.230   <none>        80/TCP    59s
+
 ```
-3. Use `kubectl exec` to query the store-products service from the busybox testing pod.
+3. check results
+```
+kubectl get pods
+```
+
+4. Use `kubectl exec` to query the store-products service from the busybox testing pod.
 
 ```
 kubectl exec busybox -- curl -s store-products
