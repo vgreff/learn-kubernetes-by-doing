@@ -56,6 +56,13 @@ kubectl edit deployment mongodb -n robot-shop
 
 ```
 kubectl get deployment mongodb -n robot-shop
+
+kubectl get services -n robot-shop
+kubectl get deployments  -n robot-shop
+kubectl get pods -n robot-shop
+kubectl get namespace  
+
+
 ```
     After a few moments, the number of available replicas should be 2.
 
