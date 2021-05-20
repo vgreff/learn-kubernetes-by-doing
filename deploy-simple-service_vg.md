@@ -93,6 +93,14 @@ kubectl get pods
 ```
 kubectl exec busybox -- curl -s store-products
 ```
+5. Use `kubectl run ` to query the store-products service from the busybox testing pod.
+
+```
+ kubectl run -i --tty --rm debug --image=busybox --restart=Never -- sh
+ wget store-products
+ cat index.html 
+
+```
 
 
 ## Conclusion
