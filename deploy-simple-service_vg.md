@@ -100,6 +100,10 @@ kubectl exec busybox -- curl -s store-products
  wget store-products
  cat index.html 
 
+kubectl run -i --tty --rm debug --image=ubuntu --restart=Never -- sh
+kubectl delete pod debug
+
+kubectl run -i --tty --rm debug --image=tutum/curl --restart=Never -- sh
 ```
 
 
